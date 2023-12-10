@@ -1,0 +1,20 @@
+---
+title: 'Interactive Map with Leaflet'
+author: "Slava S"
+date: "2023-12-10"
+output: html_document
+---
+
+```{r}
+library(leaflet)
+
+# Создание карты
+m <- leaflet() %>%
+  addTiles() %>% 
+  setView(lng = 30, lat = 50, zoom = 4)  # Укажите координаты и уровень масштабирования
+
+# Добавление маркера
+m <- addMarkers(m, lng = 30, lat = 50, popup = "Место на карте")  # Замените координаты и текст
+
+# Вывод карты
+m
