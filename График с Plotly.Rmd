@@ -1,0 +1,16 @@
+---
+title: "График с Plotly"
+date: '`r format(Sys.time(), "%Y-%m-%d")`'
+output: html_document
+---
+
+```{r}
+library(plotly)
+
+# Создание данных
+x <- c(1, 2, 3, 4, 5)
+y <- c(10, 15, 13, 18, 20)
+
+# Создание графика с помощью Plotly
+plot_ly(x = x, y = y, type = 'scatter', mode = 'lines+markers') %>%
+  layout(title = 'Простой график', xaxis = list(title = 'X'), yaxis = list(title = 'Y'))
